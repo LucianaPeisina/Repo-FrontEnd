@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { GuardGuard } from './servicios/guard.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'portfolio',component: PortfolioComponent, canActivate:[GuardGuard]},
+  {path:'iniciar-sesion', component:IniciarSesionComponent},
+  {path:'',redirectTo:'iniciar-sesion',pathMatch:'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

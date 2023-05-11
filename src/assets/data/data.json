@@ -1,0 +1,191 @@
+{ 
+    "curso":[     {
+        "clase":"ed",
+        "icono": "icon fa-sharp fa-solid fa-graduation-cap", 
+        "nombre": "Pensamiento Computacional",
+        "start": "2022-07-07",
+        "end": "Actualidad",
+        "lugar": "Agencia de Aprendizaje a lo largo de la Vida",
+        "contenido": "Orientado a la formación del pensamiento básico para resolver distintos ejercicios de programación, enfoque en  el entendimiento de la lógica sin entrar en los lenguajes especificos",
+        "extra": "El trabajo final fue la entrega de un juego interactivo en Scratch de un laberinto con intro, sistema de puntos, muerte, y finalmente una pantalla de ganador o perdedor según correspondiera"
+    },
+    {
+        "clase":"ed",
+        "icono": "icon fa-sharp fa-solid fa-graduation-cap", 
+        "nombre": "Full Stack Python | Codo a Codo 4.0",
+        "start": "2022-07-15",
+        "end": "Diciembre 2022",
+        "lugar": "Agencia de Aprendizaje a lo largo de la Vida",
+        "contenido": "Aprendizaje de desarrollo web utilizando las herramientas de HTML, CSS, JS en el ambito FrontEnd y Python, Django, mySQL, en el backend.",
+        "extra": "El proyecto final fue la presentación de un sitio web con consumisión de API, y su respectivo CRUD"
+    },
+    {
+        "clase":"ed",
+        "icono": "icon fa-sharp fa-solid fa-graduation-cap", 
+        "nombre": "YoProgramo",
+        "start": "2022-10-07",
+        "end": "Mayo 2023",
+        "lugar": "Argentina Programa",
+        "contenido": "Aprendizaje de programación orientado a herramientas de desarrollo web, utilización de Angular, HTML, CSS y Typescript en el Front End y el Spring Boot y mySQL en Back End.",
+        "extra": "El proyecto final es la presentación de un Portfolio Web que utilice todo lo que se aprendió durante el transcurso del curso, incluyendo la vista de administrador para editar y la de usuario. "
+    },
+    {
+        "clase":"tra",
+        "icono": "icon fa-solid fa-briefcase", 
+        "nombre":"Vendedora",
+        "lugar": "Emprendimiento propio",
+        "start": "2020-10-04",
+        "end": "Actualidad",
+        "contenido": " Emprendimiento de venta de libros",
+        "extra": "Atención a clientes, control de Stock, llevar libro Diario, ecommerce"
+    },
+    {
+        "clase":"ed",
+        "icono": "icon fa-sharp fa-solid fa-graduation-cap", 
+        "nombre": "Inglés Básico",
+        "start": "2022-07-13",
+        "end": "2023-04-22",
+        "lugar": "Universidad Nacional de Córdoba",
+        "contenido": "Aprendizaje del nivel básico de inglés enfocándose en la enseñanza a través de ejemplos cotidianos.",
+        "extra": "El curso fue desde lo más básico como la enseñanza de los números y de ciertas palabras y colores hasta el ámbito de la rutina, pasando por el Presente simple, el presente continuo, el pasado, y el Futuro simple, haciendo enfoque en diversas conversaciones cotidianas. Enfocando la práctica en la pronunciación y en la realización de ejercicios"
+    },
+    {
+        "clase":"ed",
+        "icono": "icon fa-sharp fa-solid fa-graduation-cap", 
+        "nombre": "Tecnicas de Programación | Trayecto de Programador",
+        "start": "2023-03-17",
+        "end": "Actualidad",
+        "lugar": "Agencia de Aprendizaje a lo largo de la Vida",
+        "contenido": "Aprendizaje de programación del lenguaje Python creando diversas aplicaciones y aprendiendo sus diversas funciones en el área de la programación.",
+        "extra": "En cada clase se realizan diversos códigos para la resolución de ejercicios prácticos, orientados al desarrollo de aplicaciones con los conocimientos adquiridos. Estas aplicaciones se encuentran subidas en GitHub"
+    }
+
+    ],
+    "duras":[
+        {
+            "num": "80",
+            "nombre": "Desarrollo Web",
+            "nivel": "Intermedio"
+        },
+        {
+            "num": "100",
+            "nombre": "Escritura y Redacción",
+            "nivel": "Avanzado"
+        },
+        {
+            "num": "80",
+            "nombre": "Competencias Digitales",
+            "nivel": "Intermedio"
+        },
+        {
+            "num": "90",
+            "nombre": "Dactilografía",
+            "nivel": "Avanzado"
+        },
+        {
+            "num": "60",
+            "nombre": "Base de datos",
+            "nivel": "Básico"
+        },
+        {
+            "num": "50",
+            "nombre": "Inglés",
+            "nivel": "Básico"
+        }
+    
+    ],
+    "blandas":[
+        {
+            "nombre": "Organización"
+        },
+        {
+            "nombre": "Gestion de tiempo"
+        },
+        {
+            "nombre": "Responsabi- lidad"
+        },
+
+        {
+            "nombre": "Trabajo en equipo"
+        },
+        {
+
+            "nombre": "Adaptabilidad"
+        },
+        {
+            
+            "nombre": "Aprendizaje e Investigación"
+        }
+    
+    ],
+
+    "skills": [
+        {
+        "logo": "https://lucianapeisina.github.io/html-1.svg",
+        "nombre": "HTML",
+        "nivel": "INTERMEDIO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/css-3.svg",
+        "nombre": "CSS",
+        "nivel": "INTERMEDIO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/logo-javascript.svg",
+        "nombre": "Javascript",
+        "nivel": "BÁSICO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/bootstrap-5-1.svg",
+        "nombre": "Bootstrap",
+        "nivel": "INTERMEDIO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/git-bash.svg",
+        "nombre": "Git",
+        "nivel": "BÁSICO"
+    }
+ ],
+"desarrollo": [
+    {
+        "logo": "https://lucianapeisina.github.io/mysql-3.svg",
+        "nombre": "MySQL",
+        "nivel": "INTERMEDIO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/django.svg",
+        "nombre": "Django",
+        "nivel": "BÁSICO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/python-4.svg",
+        "nombre": "Python",
+        "nivel": "INTERMEDIO"
+    },
+    {
+        "logo": "https://lucianapeisina.github.io/angular-icon-1.svg",
+        "nombre": "Angular",
+        "nivel": "INTERMEDIO"
+    }
+    
+
+],
+
+
+"proyectos": [
+    {
+    "img": "https://lucianapeisina.github.io/proyectojuridico.jpeg",
+    "nombre": " Estudio Juridico",
+    "descrip": "Página Web para estudio jurídicos con secciones de: Servicios, Sobre Nosotros, Noticias (actualizables), y Contacto, con CRUD incluido, creado con HTML, CSS, JS, Python y Django.",
+    "enlace": "https://estudiojuridicofake.netlify.app"
+},
+{
+    "img": "https://lucianapeisina.github.io/html-1.svg",
+    "nombre": "HTML",
+    "descrip": "INTERMEDIO",
+    "enlace": "INTERMEDIO"
+}
+]
+
+
+}
