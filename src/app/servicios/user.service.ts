@@ -9,6 +9,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   public añadirUsuario(user:any){
-    return this.httpClient.post(`${baserUrl}/usuarios/`,user);
+    return this.httpClient.post(`${baserUrl}/sign-up`, user);
+
   }
 }

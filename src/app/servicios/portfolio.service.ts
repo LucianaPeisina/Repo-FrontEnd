@@ -12,30 +12,35 @@ export class PortfolioService {
   constructor(private http: HttpClient) { }
 
   obtenerPersona(): Observable<any> {
-    return this.http.get(this.url + 'persona');
+    return this.http.get(this.url + '');
   }
 
   obtenerExperiencia(): Observable<any> {
-    return this.http.get(this.url + 'experiencia');
+    return this.http.get(this.url + 'experiencia' + '/');
   }
 
   obtenerBlandas(): Observable<any> {
-    return this.http.get(this.url + 'blandas');
+    return this.http.get(this.url + 'blandas' + '/');
   }
 
   obtenerDuras(): Observable<any> {
-    return this.http.get(this.url + 'duras');
+    return this.http.get(this.url + 'duras' + '/');
   }
 
   obtenerProyectos(): Observable<any> {
-    return this.http.get(this.url + 'proyectos');
+    return this.http.get(this.url + 'proyectos' + '/');
   }
 
   obtenerSkills(): Observable<any> {
-    return this.http.get(this.url + 'skills');
+    return this.http.get(this.url + 'skills'+'/');
   }
 
   obtenerDesarrollo(): Observable<any> {
-    return this.http.get(this.url + 'desarrollo');
+    return this.http.get(this.url + 'desarrollo' + '/');
   }
+
+  obtenerProyecto(): Observable<any> {
+    return this.http.get(this.url + 'proyectos' + '/');
+  }
+
 }

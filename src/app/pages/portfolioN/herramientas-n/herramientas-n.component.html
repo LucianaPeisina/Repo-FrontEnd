@@ -1,0 +1,40 @@
+
+<section class="skills section" id="Herramientas">
+  <h3 class="section__title">
+      Herramientas
+  </h3>
+  <span class="section__subtitle">
+
+  </span>
+  <div class="skills__container container grid section__border">
+      <div class="skills__content">
+          <h3 class="skills__title">
+              <i class="ri-braces-line"></i> Desarrollador Frontend
+          </h3>
+          <div class="skills__info">
+              <div class="skills__data" *ngFor="let skills of skillsList">
+                  <div class="skills__blob">
+                      <img src="{{skills.logo}}" alt="skills image">
+                  </div>
+                  <h3 class="skills__name"> {{skills.nombre}} </h3>
+                  <span class="skills__subtitle"> {{skills.nivel}} </span> 
+              </div>
+          </div>
+      </div>
+  <br>
+      <div class="skills__content">
+          <h3 class="skills__title">
+              <i class="ri-braces-line"></i> Desarrollador Backend
+          </h3>
+          <div class="skills__info">
+              <div class="skills__data" *ngFor="let desarrollo of desarrolloList">
+                  <div class="skills__blob">
+                      <img src="{{desarrollo.logo}}" alt="skills image">
+                  </div>
+                  <h3 class="skills__name"> {{desarrollo.nombre}} </h3>
+                  <span class="skills__subtitle"> {{desarrollo.nivel}} </span> 
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

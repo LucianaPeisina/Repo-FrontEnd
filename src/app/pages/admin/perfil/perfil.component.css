@@ -1,0 +1,123 @@
+
+
+/* Seccion Acerca de mi */
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgb(245, 245, 245);
+  }
+  
+  .about-image {
+    width: 50%;
+  }
+  
+  .about-image img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .about-text {
+    width: 50%;
+    padding-left: 50px;
+  }
+  
+  .about-text h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color:rgb(14, 14, 14) ;
+  }
+  
+  .about-text h3{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color:rgb(106, 6, 236);
+    position: relative;
+  }
+  
+  
+  .about-text h3#titleP::after{
+    content: " ";
+    position: absolute;
+    width: 30%;
+    height: 4px;
+    left: 50%;
+    bottom: -5px;
+    background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+    transform: translateX(-160%);
+  }
+  
+  .about-text p {
+    color:rgb(14, 14, 14) ;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  
+  .about-text span {
+    color: rgb(106, 6, 236);
+    font-weight: bold;
+    font-size: 30px;
+    animation: changeWord 4s infinite;
+  }
+  .social-icons a {
+    color: rgb(106, 6, 236);
+    font-size: 40px;
+    margin-right: 20px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .social-icons a:hover i {
+    transform: scale(1.2);
+  }
+  .social-icons{
+    display: flex;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .about-image {
+      width: 100%;
+    }
+    
+    .about-text {
+      width: 100%;
+      padding: 0;
+    }
+    .about-text h3#title{
+    margin-top: 10px;
+    text-align: center;
+    }
+    .about-text span{
+      font-size: 25px;
+    }
+    .about-text p {
+      font-size: 20px;
+  
+    }
+    .about-text h2{
+      font-size: 23px;
+    }.about-text h3#title::after{
+      content: " ";
+      position: absolute;
+      width: 30%;
+      height: 4px;
+      left: 50%;
+      bottom: -5px;
+      background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+      transform: translateX(-50%);
+    }
+  
+  
+    
+  }
+  
+  
+  

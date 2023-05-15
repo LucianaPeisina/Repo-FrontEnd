@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { LoginService } from 'src/app/servicios/login.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -9,38 +10,61 @@ import { Component, OnInit} from '@angular/core';
 export class EncabezadoComponent implements OnInit {
 
   public active : boolean = false 
+  
+  isLoggedIn = false;
+  user:any = null;
 
-  constructor() { }
-  ngOnInit(): void {}
 
+
+  constructor(public login:LoginService) { }
+  ngOnInit(): void {
+    this.isLoggedIn = this.login.isLoggedIn();
+    this.user = this.login.getUser();
+    this.login.loginStatusSubjec.asObservable().subscribe(
+      data => {
+        this.isLoggedIn = this.login.isLoggedIn();
+        this.user = this.login.getUser();
+      }
+
+    )
+
+  }
+
+  public logout(){
+    this.login.logout();
+    window.location.reload();
+  }
+  
   setActive() : void {
     this.active = !this.active
   }
   public itemsMenu = [
     {
       nombre: 'Acerca',
-      ruta: '/portfolio#Perfil',
+      ruta: '/#Perfil',
     },
     {
       nombre: 'Habilidades',
-      ruta: '/portfolio#Habilidades',
+      ruta: '/#Habilidades',
     },
     {
       nombre: 'Experiencias',
-      ruta: '/portfolio#Experiencia',
+      ruta: '/#Experiencia',
     }, 
     {
       nombre: 'Herramientas',
-      ruta: '/portfolio#Herramientas',
+      ruta: '/#Herramientas',
     },
     {
       nombre: 'Proyectos',
-      ruta: '/portfolio#Proyectos',
+      ruta: '/#Proyectos',
     },
     {
       nombre: 'Contacto',
-      ruta: '/portfolio#Contacto',
+      ruta: '/#Contacto',
     },
+
+    
   ];
 
 

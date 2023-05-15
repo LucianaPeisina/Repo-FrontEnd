@@ -18,7 +18,7 @@ h1{
   .header__button{
       display: none;
       cursor: pointer;
-      background-color: rgb(255, 255, 255);
+      background-color:  hsl(250, 69%, 61%);
   
     }
   
@@ -40,7 +40,8 @@ h1{
   .header__li{
     color: rgb(253,253, 253);
     margin: 0.5em;
-    font-weight: bold;
+
+    font-size: 1.5rem;
   
   
   }

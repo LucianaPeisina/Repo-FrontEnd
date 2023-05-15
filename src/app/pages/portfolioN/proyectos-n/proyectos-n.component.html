@@ -1,0 +1,23 @@
+<section id="Proyectos" class="section proyecto">
+    <h2 class="section__title">
+        Proyectos
+    </h2>
+
+<swiper-container  class="mySwiper portfolio__container containerP" navigation="true" pagination="true" keyboard="true" mousewheel="true"
+css-mode="true" pagination-clickable="true" >
+    <swiper-slide class="portfolio__content gridP" *ngFor="let proyectos of proyectoList">   
+        <img src="{{proyectos.img}}" alt="" class="portfolio__img">
+        <div class="portfolio__data"> 
+            <h3 class="portfolio__title"> {{proyectos.nombre}}</h3>
+            <p class="portfolio__decription"> {{proyectos.descrip}}          </p>  <br>
+            <a href="{{proyectos.enlace}}" target="_blank" class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="fas fa-arrow-right button__icon"></i>
+            </a>
+        </div>
+    </swiper-slide>
+
+
+</swiper-container>
+
+</section>

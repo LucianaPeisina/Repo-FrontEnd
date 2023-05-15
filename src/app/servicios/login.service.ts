@@ -13,12 +13,13 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   //generamos el token
-  public generateToken(loginData:any){
-    return this.http.post(`${baserUrl}/generate-token`,loginData);
-  }
+//generamos el token
+public generateToken(loginData:any){
+  return this.http.post(`${baserUrl}/authenticate`,loginData);
+}
 
   public getCurrentUser(){
-    return this.http.get(`${baserUrl}/actual-usuario`);
+    return this.http.get(`${baserUrl}/`);
   }
 
   //iniciamos sesión y establecemos el token en el localStorage

@@ -1,6 +1,42 @@
 <header class="header">
+
+
+  
     <h1 class="header__h1">
-        <a href="#" class="header__a">Iniciar Sesion</a>
+        <a  *ngIf = "!isLoggedIn"
+        [routerLink]="'/iniciar-sesion'"
+        mat-icon-button
+        class = "example-icon favorite-icon header__a"
+        aria-label = "Example icon-button with heart icon">Iniciar Sesion</a>
+        <a
+        *ngIf = "!isLoggedIn"
+        [routerLink]="'/signup'"
+        mat-icon-button
+        class="example-icon favorite-icon mr20 ml70"
+        aria-label="Example icon-button with heart icon"
+      >
+        Registrar
+      </a>
+      <a
+      *ngIf = "isLoggedIn"
+      (click) = "logout()"
+      style="margin-right: 50px"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      Cerrar sesión
+    </a>
+    <button
+    *ngIf = "isLoggedIn && user"
+    mat-button
+    style="margin-right: 10px"
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    [routerLink] = "'/home'"
+  >
+    {{ user.username }}
+  </button>
     </h1>
 
     <button 
