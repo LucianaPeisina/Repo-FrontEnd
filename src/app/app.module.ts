@@ -18,16 +18,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { DemoNgZorroAntdModule } from "./DemoNgZorroAntdModule";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PortfolioService } from './servicios/portfolio.service';
-import { InterceptorService } from './servicios/interceptor.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExperienciaComponent } from './pages/admin/experiencia/experiencia.component';
-import { HabilidadesComponent } from './pages/admin/habilidades/habilidades.component';
-import { HerramientasComponent } from './pages/admin/herramientas/herramientas.component';
-import { PerfilComponent } from './pages/admin/perfil/perfil.component';
-import { ProyectosComponent } from './pages/admin/proyectos/proyectos.component';
-import { ContactoComponent } from './pages/admin/contacto/contacto.component';
 import { IniciarSesionComponent } from './pages/iniciar-sesion/iniciar-sesion.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PerfilNComponent } from './pages/portfolioN/perfil-n/perfil-n.component';
@@ -45,20 +42,17 @@ import { AddHabilidadesComponent } from './pages/admin/crud/add-habilidades/add-
 import { AddProyectosComponent } from './pages/admin/crud/add-proyectos/add-proyectos.component';
 import { AddHerramientasComponent } from './pages/admin/crud/add-herramientas/add-herramientas.component';
 import { AddExperienciaComponent } from './pages/admin/crud/add-experiencia/add-experiencia.component';
+
+
 register();
 
 
 @NgModule({
 
-  declarations: [
+  declarations: [ 
     AppComponent,
     HomeComponent,
-    ExperienciaComponent,
-    HabilidadesComponent,
-    HerramientasComponent,
-    PerfilComponent,
-    ProyectosComponent,
-    ContactoComponent,
+
 
     IniciarSesionComponent,
     SignupComponent,
@@ -76,6 +70,7 @@ register();
     AddProyectosComponent,
     AddHerramientasComponent,
     AddExperienciaComponent,
+
 
 
   ],
@@ -97,11 +92,13 @@ register();
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    DemoNgZorroAntdModule
+
 
   ],
-  providers: [ PortfolioService, DecimalPipe,
-  {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}
+  providers: [ PortfolioService, DecimalPipe, { provide: NZ_I18N, useValue: en_US }
+  
 ],
   bootstrap: [AppComponent],
    schemas: [CUSTOM_ELEMENTS_SCHEMA]

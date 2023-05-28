@@ -1,0 +1,76 @@
+#AddProyectos .heading {
+    font-size: 27px;
+    font-weight: 500;
+    color: rgb(106, 6, 236);
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  #AddProyectos .heading::after {
+    content: " ";
+    position: absolute;
+    width: 5%;
+    height: 4px;
+    left: 50%;
+    bottom: -5px;
+    background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+    transform: translateX(-50%);
+  }
+  
+  #AddProyectos .container {
+    margin-left: 1.5rem;
+  }
+  
+  #AddProyectos .proyecto__content {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 0.25rem;
+    border: 2px solid hsl(250, 69%, 61%);
+    border-radius: 1rem;
+  }
+  
+  #AddProyectos .proyecto__label {
+    font-size: 1rem;
+    color: hsl(250, 69%, 61%);
+  }
+  
+  #AddProyectos .proyecto__input {
+    width: 100%;
+    font-size: 0.938rem;
+    color: hsl(250, 69%, 61%);
+    outline: none;
+    padding: 0.25rem 0.5rem 0.5rem 0;
+  }
+  
+  #AddProyectos .proyecto__button {
+    align-items: center;
+    color: hsl(250, 69%, 61%);
+    font-size: 0.813rem;
+  }
+  
+  #AddProyectos .button {
+    background-color: hsl(250, 69%, 61%);
+    display: inline-block;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  #AddProyectos .button i {
+    font-size: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  #AddProyectos .button:hover i {
+    transform: translateX(0.25rem);
+  }
+  
+  #AddProyectos .proyecto__form-error {
+    color: red;
+    text-align: center;
+  }
+  

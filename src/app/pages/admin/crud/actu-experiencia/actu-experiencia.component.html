@@ -1,8 +1,8 @@
 <mat-card>
-    <h1>Agregar nuevo examen</h1>
+    <h1>Agregar nueva experiencia </h1>
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <form (ngSubmit) = "guardarExperiencia()">
+        <form *ngIf = "experiencia" (ngSubmit) = "actualizarDatos()">
           <mat-form-field class="w100" appearance="fill">
             <mat-label>Nombre</mat-label>
             <input

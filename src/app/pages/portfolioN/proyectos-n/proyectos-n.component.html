@@ -1,23 +1,29 @@
 <section id="Proyectos" class="section proyecto">
     <h2 class="section__title">
-        Proyectos
+      Proyectos
+      <a *ngIf="isLoggedIn" [routerLink]="'/add-proyectos'" class="add-button">+</a>
     </h2>
-
-<swiper-container  class="mySwiper portfolio__container containerP" navigation="true" pagination="true" keyboard="true" mousewheel="true"
-css-mode="true" pagination-clickable="true" >
-    <swiper-slide class="portfolio__content gridP" *ngFor="let proyectos of proyectoList">   
-        <img src="{{proyectos.img}}" alt="" class="portfolio__img">
-        <div class="portfolio__data"> 
-            <h3 class="portfolio__title"> {{proyectos.nombre}}</h3>
-            <p class="portfolio__decription"> {{proyectos.descrip}}          </p>  <br>
-            <a href="{{proyectos.enlace}}" target="_blank" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="fas fa-arrow-right button__icon"></i>
-            </a>
+  
+    <swiper-container class="mySwiper portfolio__container containerP" navigation="true" pagination="true" keyboard="true" mousewheel="true"
+      css-mode="true" pagination-clickable="true">
+      <swiper-slide class="portfolio__content gridP" *ngFor="let proyecto of proyectoList">
+        <img src="{{proyecto.img}}" alt="" class="portfolio__img">
+        <div class="portfolio__data">
+          <h3 class="portfolio__title">{{proyecto.nombre}}</h3>
+          <p class="portfolio__decription">{{proyecto.descrip}}</p> <br>
+          <a href="{{proyecto.enlace}}" target="_blank" class="button button--flex button--small portfolio__button">
+            Demo
+            <i class="fas fa-arrow-right button__icon"></i>
+          </a>
+          <button *ngIf="isLoggedIn" (click)="editarProyecto(proyecto.id)">
+            <i class="ri-pencil-line" style="color: #6a06ec;"></i>
+          </button>
+          <button *ngIf="isLoggedIn" (click)="eliminarProyecto(proyecto.id)">
+            <i class="ri-delete-bin-line" style="color: #6a06ec;"></i>
+          </button>
         </div>
-    </swiper-slide>
-
-
-</swiper-container>
-
-</section>
+      </swiper-slide>
+    </swiper-container>
+  </section>
+  
+  

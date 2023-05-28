@@ -6,7 +6,7 @@ import { PieComponent } from '././pie/pie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BotonscrollComponent } from './botonscroll/botonscroll.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -17,7 +17,6 @@ import { RouterModule } from '@angular/router';
 
     BotonscrollComponent,
 
-    PortfolioComponent
 
   ],
   imports: [
@@ -36,7 +35,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     EncabezadoComponent,
     PieComponent,
-    BotonscrollComponent
+    BotonscrollComponent,
+    
   ],
 
 

@@ -1,71 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
-
-import { LoginService } from './../../servicios/login.service';
-
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-iniciar-sesion',
   templateUrl: './iniciar-sesion.component.html',
   styleUrls: ['./iniciar-sesion.component.css']
 })
-export class IniciarSesionComponent implements OnInit {
-  
+export class IniciarSesionComponent implements OnInit {    
+  validateForm!: FormGroup;
+  isSpinning = false;
+  isLoggedIn = false;
 
-  loginData = {
-    "name" : '',
-    "password" : '',
-  }
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
-  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router) { }
+  ngOnInit() {
+    this.validateForm = this.fb.group({
+      username: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+    });
 
-  ngOnInit(): void {
-  }
-
-  formSubmit(){
-    if(this.loginData.name.trim() == '' || this.loginData.name.trim() == null){
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
-        duration:3000
-      })
-      return;
-    }
-
-    if(this.loginData.password.trim() == '' || this.loginData.password.trim() == null){
-      this.snack.open('La contraseña es requerida !!','Aceptar',{
-        duration:3000
-      })
-      return;
-    }
-
-    this.loginService.generateToken(this.loginData).subscribe(
-      (data:any) => {
-        console.log(data);
-        this.loginService.loginUser(data.token);
-        this.loginService.getCurrentUser().subscribe((user:any) => {
-          this.loginService.setUser(user);
-          console.log(user);
-
-          if(this.loginService.getUserRole() == 'ADMIN'){
-            this.router.navigate(['home']);
-            this.loginService.loginStatusSubjec.next(true);
-          }
-          else if(this.loginService.getUserRole() == 'NORMAL'){
-
-            this.router.navigate(['portfolio']);
-            this.loginService.loginStatusSubjec.next(true);
-          }
-          else{
-            this.loginService.logout();
-          }
-        })
-      },(error) => {
-        console.log(error);
-        this.snack.open('Detalles inválidos , vuelva a intentar !!','Aceptar',{
-          duration:3000
-        })
+    this.authService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+      if (isLoggedIn) {
+        this.router.navigate(['']);
       }
-    )
+    });
+  }
+
+  login() {
+    this.authService.login(this.validateForm.get('username')!.value, this.validateForm.get('password')!.value)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 }

@@ -1,49 +1,38 @@
-import  Swal  from 'sweetalert2';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserService } from './../../servicios/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
-  public user = {
-    name : '',
+  validateForm!: FormGroup;
+  isSpinning = false;
 
-    email : '',
-    password : ''
-  }
-
-  constructor(private userService:UserService,private snack:MatSnackBar) { }
-
-  ngOnInit(): void {
-  }
-
-  formSubmit(){
-    console.log(this.user);
-    if(this.user.name == '' || this.user.name == null){
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
-        duration : 3000,
-        verticalPosition : 'top',
-        horizontalPosition : 'right'
-      });
-      return;
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return { required: true };
+    } else if (control.value !== this.validateForm.controls['password'].value) {
+      return { confirm: true, error: true };
     }
+    return {};
+  };
 
-    this.userService.añadirUsuario(this.user).subscribe(
-      (data) => {
-        console.log(data);
-        Swal.fire('Usuario guardado','Usuario registrado con exito en el sistema','success');
-      },(error) => {
-        console.log(error);
-        this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
-          duration : 3000
-        });
-      }
-    )
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.validateForm = this.fb.group({
+      name: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required, this.confirmationValidator]]
+    });
   }
 
+  register() {
+    this.authService.register(this.validateForm.value).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

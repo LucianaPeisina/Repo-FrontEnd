@@ -1,1 +1,28 @@
-<p>add-herramientas works!</p>
+<section class="add-herramienta section">
+    <div class="add-herramienta__container container">
+      <h3 class="add-herramienta__title">Agregar Herramienta</h3>
+      <form class="add-herramienta__form">
+        <div class="add-herramienta__form-group">
+          <label for="tipo" class="add-herramienta__label">Tipo:</label>
+          <select id="tipo" class="add-herramienta__select" [(ngModel)]="tipo" name="tipo" required>
+            <option value="skills">Skills</option>
+            <option value="desarrollo">Desarrollo</option>
+          </select>
+        </div>
+        <div class="add-herramienta__form-group">
+          <label for="nombre" class="add-herramienta__label">Nombre:</label>
+          <input type="text" id="nombre" class="add-herramienta__input" [(ngModel)]="nombre" name="nombre" required>
+        </div>
+        <div class="add-herramienta__form-group">
+          <label for="nivel" class="add-herramienta__label">Nivel:</label>
+          <input type="text" id="nivel" class="add-herramienta__input" [(ngModel)]="nivel" name="nivel" required>
+        </div>
+        <div class="add-herramienta__form-group">
+          <label for="logo" class="add-herramienta__label">URL del Logo:</label>
+          <input type="text" id="logo" class="add-herramienta__input" [(ngModel)]="logo" name="logo" required>
+        </div>
+        <button class="add-herramienta__button" (click)="agregarHerramienta()">Agregar</button>
+      </form>
+    </div>
+  </section>
+  

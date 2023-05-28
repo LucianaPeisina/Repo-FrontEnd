@@ -1,0 +1,76 @@
+.add-herramienta .add-herramienta__title {
+    font-size: 27px;
+    font-weight: 500;
+    color: rgb(106, 6, 236);
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  .add-herramienta .add-herramienta__title::after {
+    content: " ";
+    position: absolute;
+    width: 5%;
+    height: 4px;
+    left: 50%;
+    bottom: -5px;
+    background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+    transform: translateX(-50%);
+  }
+  
+  .add-herramienta .add-herramienta__container {
+    margin-left: 1.5rem;
+  }
+  
+  .add-herramienta .add-herramienta__form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .add-herramienta .add-herramienta__form-group {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 0.25rem;
+    border: 2px solid hsl(250, 69%, 61%);
+    border-radius: 1rem;
+  }
+  
+  .add-herramienta .add-herramienta__label {
+    font-size: 1rem;
+    color: hsl(250, 69%, 61%);
+  }
+  
+  .add-herramienta .add-herramienta__select,
+  .add-herramienta .add-herramienta__input {
+    width: 100%;
+    font-size: 0.938rem;
+    color: hsl(250, 69%, 61%);
+    outline: none;
+    padding: 0.25rem 0.5rem 0.5rem 0;
+  }
+  
+  .add-herramienta .add-herramienta__button {
+    background-color: hsl(250, 69%, 61%);
+    display: inline-block;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .add-herramienta .add-herramienta__button i {
+    font-size: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .add-herramienta .add-herramienta__button:hover i {
+    transform: translateX(0.25rem);
+  }
+  
+  .add-herramienta .add-herramienta__form-error {
+    color: red;
+    text-align: center;
+  }
+  

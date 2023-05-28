@@ -1,1 +1,41 @@
-<p>add-experiencia works!</p>
+<div class="main" id="AddExperiencia">
+    <h3 class="heading">Agregar Experiencia</h3>
+    <div class="container">
+      <form (submit)="agregarExperiencia()">
+        <div class="experiencia__content">>
+          <label for="nombre" class="experiencia__label">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="experiencia.nombre" class="experiencia__input" required>
+        </div>
+        <div class="experiencia__content">> 
+          <label for="lugar" class="experiencia__label">Lugar:</label>
+          <input type="text" id="lugar" [(ngModel)]="experiencia.lugar" class="experiencia__input" required>
+        </div>
+        <div class="experiencia__content">>
+          <label for="contenido" class="experiencia__label">Contenido:</label>
+          <textarea id="contenido" [(ngModel)]="experiencia.contenido" class="experiencia__input" required></textarea>
+        </div>
+        <div class="experiencia__content">>
+          <label for="extra" class="experiencia__label">Extra:</label>
+          <input type="text" id="extra" [(ngModel)]="experiencia.extra" class="experiencia__input">
+        </div>
+        <div class="experiencia__content">>
+          <label for="clase" class="experiencia__label">Clase:</label>
+          <input type="text" id="clase" [(ngModel)]="experiencia.clase" class="experiencia__input">
+        </div>
+        <div class="experiencia__content">>
+          <label for="icono" class="experiencia__label">Icono:</label>
+          <input type="text" id="icono" [(ngModel)]="experiencia.icono" class="experiencia__input">
+        </div>
+        <div class="experiencia__content">>
+          <label for="start" class="experiencia__label">Fecha de inicio:</label>
+          <input type="date" id="start" [(ngModel)]="experiencia.start" class="experiencia__input" required>
+        </div>
+        <div class="experiencia__content">>
+          <label for="end" class="experiencia__label">Fecha de fin:</label>
+          <input type="text" id="end" [(ngModel)]="experiencia.end" class="experiencia__input">
+        </div>
+        <button type="submit" class="button experiencia__button">Agregar Experiencia <i class="fas fa-arrow-right button__icon"></i></button>
+      </form>
+    </div>
+  </div>
+  
