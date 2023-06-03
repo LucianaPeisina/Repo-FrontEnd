@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/servicios/auth.service';
 
@@ -7,10 +7,20 @@ import { AuthService } from 'src/app/servicios/auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
-
+export class SignupComponent implements OnInit {
   validateForm!: FormGroup;
   isSpinning = false;
+
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({
+      name: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()]).{8,}$/)]],
+      confirmPassword: [null, [Validators.required, this.confirmationValidator]]
+    });
+  }
 
   confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
     if (!control.value) {
@@ -21,16 +31,7 @@ export class SignupComponent {
     return {};
   };
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-    this.validateForm = this.fb.group({
-      name: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.email]],
-      password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required, this.confirmationValidator]]
-    });
-  }
-
-  register() {
+  register(): void {
     this.authService.register(this.validateForm.value).subscribe((res) => {
       console.log(res);
     });

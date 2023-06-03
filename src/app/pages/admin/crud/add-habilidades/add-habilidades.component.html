@@ -4,14 +4,16 @@
       <div>
         <label for="nombreBlanda" class="habilidades__label">Habilidad Blanda:</label>
         <input type="text" id="nombreBlanda" name="nombreBlanda" [(ngModel)]="habilidadBlanda.nombre" required>
-        <button type="button" (click)="agregarBlanda()">Agregar</button>
+        <button class="boton"type="button" (click)="agregarBlanda()">Agregar</button>
       </div>
       <div>
         <label for="nombreDura" class="habilidades__label">Habilidad Dura:</label>
         <input type="text" id="nombreDura" name="nombreDura" [(ngModel)]="habilidadDura.nombre" required>
         <label for="nivelDuro" class="habilidades__label">Nivel:</label>
-        <input type="number" id="nivelDuro" name="nivelDuro" [(ngModel)]="habilidadDura.nivel" required>
-        <button type="button" (click)="agregarDura()">Agregar</button>
+        <input type="text" id="nivelDuro" name="nivelDuro" [(ngModel)]="habilidadDura.nivel" required>
+        <label for="nivelDuro" class="habilidades__label">Nivel:</label>
+        <input type="number" id="nivelDuro" name="nivelDuro" [(ngModel)]="habilidadDura.num" required>
+        <button type="button" class="boton" (click)="agregarDura()">Agregar</button>
       </div>
       <button type="submit">Guardar Habilidades</button>
     </form>

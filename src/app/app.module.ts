@@ -20,7 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { DemoNgZorroAntdModule } from "./DemoNgZorroAntdModule";
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PortfolioService } from './servicios/portfolio.service';
 
@@ -93,7 +93,7 @@ register();
     MatSlideToggleModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    DemoNgZorroAntdModule
+
 
 
   ],

@@ -1,33 +1,41 @@
-<div class="bg" style="background-color: #F8F8F8;">
-  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
-
-      <div class="parent">
-          <div class="child">
-              <div nz-row class="imgDiv">
-                  <div nz-col nzSpan="24">
-                      <h1 style="margin-left: 100px;">Login</h1>
-                  </div>
-              </div>
-              <form [formGroup]="validateForm" nz-form class="login-form">
-                  <nz-form-item>
-                      <nz-form-control nzErrorTip="Ingrese su mail!">
-                          <nz-input-group nzPrefixIcon="user">
-                              <input type="text" nz-input placeholder="Email" formControlName="username" />
-                          </nz-input-group>
-                      </nz-form-control>
-                  </nz-form-item>
-                  <nz-form-item>
-                      <nz-form-control nzErrorTip="Introduzca su contraseña!">
-                          <nz-input-group nzPrefixIcon="lock">
-                              <input type="password" nz-input placeholder="Contraseña" formControlName="password" />
-                          </nz-input-group>
-                      </nz-form-control>
-                  </nz-form-item>
-                  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
-                      (click)="login()">Inicie Sesion </button>
-                  O <a routerLink="/signup"> Registrate </a>
-              </form>
-          </div>
+<div class="parent">
+  <div class="child">
+    <div class="imgDiv">
+      <div class="row">
+        <div class="col">
+          <h1 style="margin-left: 100px;">Login</h1>
+        </div>
       </div>
-  </nz-spin>
+      <form [formGroup]="validateForm" class="login-form">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Email" formControlName="username" />
+          </div>
+          <div *ngIf="validateForm.get('username')?.dirty && validateForm.get('username')?.errors" class="invalid-feedback">
+            Ingrese su email!
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password" />
+          </div>
+          <div *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors" class="invalid-feedback">
+            Introduzca su contraseña!
+          </div>
+        </div>
+        <button class="btn btn-primary login-form-button login-form-margin" (click)="login()">Inicie Sesion</button>
+        O <a routerLink="/signup">Registrate</a>
+      </form>
+    </div>
+  </div>
 </div>

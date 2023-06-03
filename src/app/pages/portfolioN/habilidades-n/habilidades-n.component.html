@@ -4,8 +4,8 @@
     <div id="HabiliDu">
       <h4> Duras </h4>
       <div class="Conjunto">
-        <div class="tarjeta" *ngFor="let duras of habiDList">
-          <div class="Interior" style="--num:{{duras.num}};">
+        <div class="tarjeta" *ngFor="let dura of habiDList">
+          <div class="Interior" style="--num:{{dura.num}};">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
               <defs>
                 <linearGradient id="GradientColor">
@@ -17,16 +17,17 @@
               <circle cx="80" cy="80" r="65" pathLength="100" />
             </svg>
 
-            <span class="color1"> Nivel <br> {{duras.nivel}}</span>
+            <span class="color1"> Nivel <br> {{dura.nivel}}</span>
 
             <br>
-            <p>{{duras.nombre}}</p>
+            <p>{{dura.nombre}}
+              <a *ngIf="isLoggedIn && dura && dura.esDura" [routerLink]="'/actu-habilidades?id=' + dura.id + '&esDura=' + dura.esDura.toString()">
+                <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
+              </a>
+            </p>
 
-            <button *ngIf="isLoggedIn" (click)="editarHabilidad(duras.id, true)">
-              <i class="ri-pencil-line" style="color: #6a06ec;"></i>
-            </button>
-            <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(duras.id, true)">
-              <i class="ri-delete-bin-line" style="color: #6a06ec;"></i>
+            <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(dura.id, true)">
+              <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>
             </button>
           </div>
         </div>
@@ -35,7 +36,7 @@
     <div id="HabiliSua">
       <h4> Suaves </h4>
       <div class="Conjunto">
-        <div class="tarjeta" *ngFor="let blandas of habiBList">
+        <div class="tarjeta" *ngFor="let blanda of habiBList">
           <div class="Interior-soft" style="--num:100;">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
               <defs>
@@ -46,13 +47,13 @@
               </defs>
               <circle cx="80" cy="80" r="65" pathLength="100" />
             </svg>
-            <span class="SoftSkill">{{blandas.nombre}}</span>
+            <span class="SoftSkill">{{blanda.nombre}} <a *ngIf="isLoggedIn" [routerLink]="'/actu-habilidades?id=' + blanda.id + '&esDura=' + (blanda.esDura ? blanda.esDura.toString() : '')">     
+              <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
+            </a>
+            </span>
 
-            <button *ngIf="isLoggedIn" (click)="editarHabilidad(blandas.id, false)">
-              <i class="ri-pencil-line" style="color: #6a06ec;"></i>
-            </button>
-            <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(blandas.id, false)">
-              <i class="ri-delete-bin-line" style="color: #6a06ec;"></i>
+            <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(blanda.id, false)">
+              <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>
             </button>
           </div>
         </div>

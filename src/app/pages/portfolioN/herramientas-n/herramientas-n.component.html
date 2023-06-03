@@ -15,11 +15,12 @@
                 </div>
                 <h3 class="skills__name"> {{skills.nombre}} </h3>
                 <span class="skills__subtitle"> {{skills.nivel}} </span>
-                <button *ngIf="isLoggedIn" (click)="editarSkill(skills.id)">
-                    <i class="ri-pencil-line"></i>
+                <button *ngIf="isLoggedIn" [routerLink]="'/actu-herramientas'">
+                    <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
                 </button>
                 <button *ngIf="isLoggedIn" (click)="borrarSkill(skills.id)">
-                    <i class="ri-delete-bin-line"></i>
+                    <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>
+
                 </button>
             </div>
         </div>
@@ -36,11 +37,12 @@
                 </div>
                 <h3 class="skills__name"> {{desarrollo.nombre}} </h3>
                 <span class="skills__subtitle"> {{desarrollo.nivel}} </span>
-                <button *ngIf="isLoggedIn" (click)="editarDesarrollo(desarrollo.id)">
-                    <i class="ri-pencil-line"></i>
+                <button *ngIf="isLoggedIn" [routerLink]="'/actu-herramientas'">
+                    <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
                 </button>
                 <button *ngIf="isLoggedIn" (click)="borrarDesarrollo(desarrollo.id)">
-                    <i class="ri-delete-bin-line"></i>
+                    <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>
+
                 </button>
             </div>
         </div>

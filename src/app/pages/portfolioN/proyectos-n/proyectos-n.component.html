@@ -15,11 +15,12 @@
             Demo
             <i class="fas fa-arrow-right button__icon"></i>
           </a>
-          <button *ngIf="isLoggedIn" (click)="editarProyecto(proyecto.id)">
-            <i class="ri-pencil-line" style="color: #6a06ec;"></i>
+          <button *ngIf="isLoggedIn" [routerLink]="'/actu-proyectos'">
+            <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
           </button>
           <button *ngIf="isLoggedIn" (click)="eliminarProyecto(proyecto.id)">
-            <i class="ri-delete-bin-line" style="color: #6a06ec;"></i>
+            <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>
+
           </button>
         </div>
       </swiper-slide>

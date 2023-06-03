@@ -9,7 +9,14 @@ export class HabilidadesService {
 
   constructor(private http: HttpClient) { }
 
-
+  public buscarDura(id: number) {
+    return this.http.get(`${baserUrl}/duras/${id}`);
+  }
+  
+  public buscarBlanda(id: number) {
+    return this.http.get(`${baserUrl}/blandas/${id}`);
+  }
+  
 
   public agregarDuras(habilidad: any) {
     return this.http.post(`${baserUrl}/duras/`, habilidad);

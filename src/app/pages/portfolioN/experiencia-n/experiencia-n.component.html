@@ -3,7 +3,7 @@
   <div class="container">
     <ul>
       <li *ngFor="let experiencia of experienciasList">
-        <button *ngIf="isLoggedIn" (click)="editarExperiencia(experiencia.id)">
+        <button *ngIf="isLoggedIn" [routerLink]="'/actu-experiencia'">
           <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
         </button>
         <button *ngIf="isLoggedIn" (click)="eliminarExperiencia(experiencia.id)">

@@ -37,6 +37,16 @@
     border-radius: 3px;
     cursor: pointer;
   }
+
+  .boton{
+
+        padding: 5px 10px;
+    background-color: #3b0a34;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
   
   .habilidad-content button:hover {
     background-color: #555;
