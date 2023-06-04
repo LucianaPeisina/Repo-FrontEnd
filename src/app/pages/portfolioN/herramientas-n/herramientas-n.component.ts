@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { AuthService } from 'src/app/servicios/auth.service';
-import { Router } from '@angular/router';
 import { HerramientasService } from 'src/app/servicios/herramientas.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class HerramientasNComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(
+    private route: ActivatedRoute,
     private portfolioService: PortfolioService,
     private authService: AuthService,
     private herramientasService: HerramientasService,
@@ -38,74 +39,48 @@ export class HerramientasNComponent implements OnInit {
     });
   }
 
-  editarSkill(id: number) {
+  editarSkill(id: number, esSkills: boolean) {
     if (this.isLoggedIn) {
-      // Lógica para editar skill solo si ha iniciado sesión
-      console.log(`Editar skill con ID ${id}`);
-      // Implementa la lógica adicional para realizar la edición utilizando el servicio de herramientas
-      const skill = this.skillsList.find((item: any) => item.id === id);
-      if (skill) {
-        this.herramientasService.actualizarSkills(skill).subscribe(response => {
-          console.log('Skill actualizado:', response);
-          // Realizar cualquier otra acción necesaria después de la edición
-        });
-      }
+      console.log(`Editar ${esSkills ? 'skill' : 'desarrollo'} con ID ${id}`);
+      this.router.navigate(['/actu-herramientas'], { queryParams: { id: id, esSkills: esSkills } });
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
-      console.log('Debe iniciar sesión para editar el skill.');
+      console.log('Debe iniciar sesión para editar la herramienta.');
     }
   }
 
   borrarSkill(id: number) {
     if (this.isLoggedIn) {
-      // Lógica para borrar skill solo si ha iniciado sesión
       console.log(`Borrar skill con ID ${id}`);
-      // Implementa la lógica adicional para realizar la eliminación utilizando el servicio de herramientas
       const skill = this.skillsList.find((item: any) => item.id === id);
       if (skill) {
         this.herramientasService.borrarSkills(skill.id).subscribe(response => {
           console.log('Skill eliminado:', response);
-          // Realizar cualquier otra acción necesaria después de la eliminación
         });
       }
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
       console.log('Debe iniciar sesión para borrar el skill.');
     }
   }
 
-  editarDesarrollo(id: number) {
+  editarDesarrollo(id: number, esSkills: boolean) {
     if (this.isLoggedIn) {
-      // Lógica para editar desarrollo solo si ha iniciado sesión
-      console.log(`Editar desarrollo con ID ${id}`);
-      // Implementa la lógica adicional para realizar la edición utilizando el servicio de herramientas
-      const desarrollo = this.desarrolloList.find((item: any) => item.id === id);
-      if (desarrollo) {
-        this.herramientasService.actualizarDesarrollo(desarrollo).subscribe(response => {
-          console.log('Desarrollo actualizado:', response);
-          // Realizar cualquier otra acción necesaria después de la edición
-        });
-      }
+      console.log(`Editar ${esSkills ? 'skill' : 'desarrollo'} con ID ${id}`);
+      this.router.navigate(['/actu-herramientas'], { queryParams: { id: id, esSkills: esSkills } });
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
-      console.log('Debe iniciar sesión para editar el desarrollo.');
+      console.log('Debe iniciar sesión para editar la herramienta.');
     }
   }
 
   borrarDesarrollo(id: number) {
     if (this.isLoggedIn) {
-      // Lógica para borrar desarrollo solo si ha iniciado sesión
       console.log(`Borrar desarrollo con ID ${id}`);
-      // Implementa la lógica adicional para realizar la eliminación utilizando el servicio de herramientas
       const desarrollo = this.desarrolloList.find((item: any) => item.id === id);
       if (desarrollo) {
         this.herramientasService.borrarDesarrollo(desarrollo.id).subscribe(response => {
           console.log('Desarrollo eliminado:', response);
-          // Realizar cualquier otra acción necesaria después de la eliminación
         });
       }
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
       console.log('Debe iniciar sesión para borrar el desarrollo.');
     }
   }

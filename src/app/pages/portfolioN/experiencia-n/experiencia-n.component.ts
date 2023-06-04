@@ -3,6 +3,9 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
 
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+
+
 @Component({
   selector: 'app-experiencia-n',
   templateUrl: './experiencia-n.component.html',
@@ -15,6 +18,7 @@ export class ExperienciaNComponent implements OnInit {
   constructor(
     private portfolioService: PortfolioService,
     private authService: AuthService,
+    private experienciaService: ExperienciaService,
     private router: Router
   ) {}
 
@@ -32,20 +36,23 @@ export class ExperienciaNComponent implements OnInit {
 
   editarExperiencia(id: number) {
     if (this.isLoggedIn) {
-      // Lógica para editar experiencia solo si ha iniciado sesión
       console.log(`Editar experiencia con ID ${id}`);
+      this.router.navigate(['/actu-experiencia'], { queryParams: { id: id } });
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
       console.log('Debe iniciar sesión para editar la experiencia.');
     }
   }
 
   eliminarExperiencia(id: number) {
     if (this.isLoggedIn) {
-      // Lógica para eliminar experiencia solo si ha iniciado sesión
       console.log(`Eliminar experiencia con ID ${id}`);
+      // Lógica adicional para realizar la eliminación utilizando el servicio de experiencias
+      this.experienciaService.eliminarExperiencia(id).subscribe(response => {
+        console.log('Experiencia eliminada:', response);
+        // Realizar cualquier otra acción necesaria después de la eliminación
+        window.location.reload(); // Recargar la página
+      });
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
       console.log('Debe iniciar sesión para eliminar la experiencia.');
     }
   }

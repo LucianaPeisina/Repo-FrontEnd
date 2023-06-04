@@ -36,19 +36,12 @@ export class ProyectosNComponent implements OnInit {
     if (this.isLoggedIn) {
       // Lógica para editar proyecto solo si ha iniciado sesión
       console.log(`Editar proyecto con ID ${id}`);
-      // Lógica adicional para realizar la edición utilizando el servicio de proyectos
-      const proyecto = this.proyectoList.find((item: any) => item.id === id);
-      if (proyecto) {
-        this.proyectosService.actualizarProyecto(proyecto).subscribe(response => {
-          console.log('Proyecto actualizado:', response);
-          // Realizar cualquier otra acción necesaria después de la edición
-        });
-      }
+      this.router.navigate(['/actu-proyectos'], { queryParams: { id: id } });
     } else {
-      // Lógica para mostrar mensaje o redirigir a página de inicio de sesión
-      console.log('Debe iniciar sesión para editar el proyecto.');
+      console.log('Debe iniciar sesión para editar la proyecto.');
     }
   }
+
 
   eliminarProyecto(id: number) {
     if (this.isLoggedIn) {

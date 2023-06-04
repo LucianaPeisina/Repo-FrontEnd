@@ -3,9 +3,10 @@
   <div class="container">
     <ul>
       <li *ngFor="let experiencia of experienciasList">
-        <button *ngIf="isLoggedIn" [routerLink]="'/actu-experiencia'">
+        <button *ngIf="isLoggedIn" [routerLink]="'/actu-experiencia'" [queryParams]="{ id: experiencia.id }">
           <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
         </button>
+        
         <button *ngIf="isLoggedIn" (click)="eliminarExperiencia(experiencia.id)">
           <i class="fa-solid fa-trash" style="color: #6a06ec;"></i>
         </button>

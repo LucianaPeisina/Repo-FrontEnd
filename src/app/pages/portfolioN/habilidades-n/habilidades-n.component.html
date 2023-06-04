@@ -21,7 +21,7 @@
 
             <br>
             <p>{{dura.nombre}}
-              <a *ngIf="isLoggedIn && dura && dura.esDura" [routerLink]="'/actu-habilidades?id=' + dura.id + '&esDura=' + dura.esDura.toString()">
+              <a *ngIf="isLoggedIn" [routerLink]="['/actu-habilidades']" [queryParams]="{ id: dura.id, esDura: dura.esDura ? dura.esDura.toString() : '' }">
                 <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
               </a>
             </p>
@@ -47,10 +47,14 @@
               </defs>
               <circle cx="80" cy="80" r="65" pathLength="100" />
             </svg>
-            <span class="SoftSkill">{{blanda.nombre}} <a *ngIf="isLoggedIn" [routerLink]="'/actu-habilidades?id=' + blanda.id + '&esDura=' + (blanda.esDura ? blanda.esDura.toString() : '')">     
-              <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
-            </a>
+            <span class="SoftSkill">
+              {{ blanda.nombre }}
+              <a *ngIf="isLoggedIn" [routerLink]="['/actu-habilidades']" [queryParams]="{ id: blanda.id, esDura: blanda.esDura ? blanda.esDura.toString() : '' }">
+                <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
+              </a>
             </span>
+            
+            
 
             <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(blanda.id, false)">
               <i class="fas fa-trash-alt" style="color: #6a06ec;"></i>

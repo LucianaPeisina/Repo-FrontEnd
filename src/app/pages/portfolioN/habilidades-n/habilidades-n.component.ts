@@ -38,6 +38,29 @@ export class HabilidadesNComponent implements OnInit {
     });
   }
 
+  actualizarHabilidad(id: number, esDura: boolean) {
+    if (this.isLoggedIn) {
+      console.log(`Actualizar habilidad con ID ${id}`);
+      let queryParams: any = { id: id, esDura: true };
+      
+      if (esDura) {
+        const habilidad = this.habiDList.find((item: any) => item.id === id);
+        if (habilidad) {
+          queryParams = { ...queryParams, nombre: habilidad.nombre, nivel: habilidad.nivel, numero: habilidad.num }; // Agrega otros parámetros si es necesario
+        }
+      } else {
+        const habilidad = this.habiBList.find((item: any) => item.id === id);
+        if (habilidad) {
+          queryParams = { ...queryParams, nombre: habilidad.nombre, nivel: habilidad.nivel}; // Agrega otros parámetros si es necesario
+        }
+      }
+  
+      this.router.navigate(['/actu-habilidades'], { queryParams: queryParams });
+    } else {
+      console.log('Debe iniciar sesión para actualizar la habilidad.');
+    }
+  }
+  
   eliminarHabilidad(id: number, esDura: boolean) {
     if (this.isLoggedIn) {
       // Lógica para eliminar habilidad solo si ha iniciado sesión

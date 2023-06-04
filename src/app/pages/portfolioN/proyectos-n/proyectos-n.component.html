@@ -15,7 +15,7 @@
             Demo
             <i class="fas fa-arrow-right button__icon"></i>
           </a>
-          <button *ngIf="isLoggedIn" [routerLink]="'/actu-proyectos'">
+          <button *ngIf="isLoggedIn" [routerLink]="'/actu-proyectos'" [queryParams]="{ id: proyecto.id }">
             <i class="fa-solid fa-pen-to-square" style="color: #6a06ec;"></i>
           </button>
           <button *ngIf="isLoggedIn" (click)="eliminarProyecto(proyecto.id)">

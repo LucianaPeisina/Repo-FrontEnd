@@ -1,25 +1,24 @@
 <div class="main" id="AddProyectos">
-    <h3 class="heading">Agregar Proyecto</h3>
-    <div class="container">
-      <form (submit)="agregarProyecto()">
-        <div class="proyecto__content">
-          <label for="nombre" class="proyecto__label">Nombre:</label>
-          <input type="text" id="nombre" [(ngModel)]="proyecto.nombre" class="proyecto__input" required>
-        </div>
-        <div class="proyecto__content">
-          <label for="descripcion" class="proyecto__label">Descripción:</label>
-          <textarea id="descripcion" [(ngModel)]="proyecto.descripcion" class="proyecto__input" required></textarea>
-        </div>
-        <div class="proyecto__content">
-          <label for="imagen" class="proyecto__label">Imagen:</label>
-          <input type="text" id="imagen" [(ngModel)]="proyecto.imagen" class="proyecto__input" required>
-        </div>
-        <div class="proyecto__content">
-          <label for="enlace" class="proyecto__label">Enlace:</label>
-          <input type="text" id="enlace" [(ngModel)]="proyecto.enlace" class="proyecto__input" required>
-        </div>
-        <button type="submit" class="button proyecto__button">Agregar Proyecto <i class="fas fa-arrow-right button__icon"></i></button>
-      </form>
-    </div>
+  <h3 class="heading">Agregar Proyecto</h3>
+  <div class="container">
+    <form (submit)="agregarProyecto()">
+      <div class="proyecto__content">
+        <label for="nombre" class="proyecto__label">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre" class="proyecto__input" required>
+      </div>
+      <div class="proyecto__content">
+        <label for="descripcion" class="proyecto__label">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" [(ngModel)]="proyecto.descrip" class="proyecto__input" required></textarea>
+      </div>
+      <div class="proyecto__content">
+        <label for="imagen" class="proyecto__label">Imagen:</label>
+        <input type="text" id="imagen" name="imagen" [(ngModel)]="proyecto.img" class="proyecto__input" required>
+      </div>
+      <div class="proyecto__content">
+        <label for="enlace" class="proyecto__label">Enlace:</label>
+        <input type="text" id="enlace" name="enlace" [(ngModel)]="proyecto.enlace" class="proyecto__input" required>
+      </div>
+      <button type="submit" class="button proyecto__button">Agregar Proyecto <i class="fas fa-arrow-right button__icon"></i></button>
+    </form>
   </div>
-  
+</div>

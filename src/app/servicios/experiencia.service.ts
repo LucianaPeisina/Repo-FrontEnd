@@ -10,23 +10,23 @@ export class ExperienciaService {
   constructor(private http:HttpClient) { }
 
   public listarExpriencia(){
-    return this.http.get(`${baserUrl}/Experiencia/`);
+    return this.http.get(`${baserUrl}/experiencia/`);
   }
 
   public agregarExperiencia(Experiencia:any){
-    return this.http.post(`${baserUrl}/Experiencia/`,Experiencia);
+    return this.http.post(`${baserUrl}/experiencia/`,Experiencia);
   }
 
-  public eliminarExperiencia(ExperienciaId:any){
-    return this.http.delete(`${baserUrl}/Experiencia/${ExperienciaId}`);
+  public eliminarExperiencia(id:any){
+    return this.http.delete(`${baserUrl}/experiencia/${id}`);
   }
 
-  public obtenerExperiencia(ExperienciaId:any){
-    return this.http.get(`${baserUrl}/Experiencia/${ExperienciaId}`);
+  public buscarExperiencia(id:any){
+    return this.http.get(`${baserUrl}/experiencia/${id}`);
   }
 
   public actualizarExperiencia(Experiencia:any){
-    return this.http.put(`${baserUrl}/Experiencia/`,Experiencia);
+    return this.http.put(`${baserUrl}/experiencia/`,Experiencia);
   }
 
 

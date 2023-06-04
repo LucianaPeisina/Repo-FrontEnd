@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actu-experiencia',
@@ -10,41 +9,36 @@ import Swal from 'sweetalert2';
 })
 export class ActuExperienciaComponent implements OnInit {
 
+  experiencia: any = {};
+  experienciaId: number = 0;
+
   constructor(
-    private route:ActivatedRoute,
-    private experienciaService:ExperienciaService,
-    private router:Router) { }
-
-  experienciaId = 0;
-  experiencia:any;
-
+    private experienciaService: ExperienciaService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.experienciaId = this.route.snapshot.params['experienciaId'];
-    this.experienciaService.obtenerExperiencia(this.experienciaId).subscribe(
-      (data) => {
+    this.route.queryParams.subscribe(params => {
+      this.experienciaId = Number(params['id']);
+      // Lógica para cargar los datos de la experiencia utilizando el servicio de experiencia
+      this.experienciaService.buscarExperiencia(this.experienciaId).subscribe(data => {
         this.experiencia = data;
-        console.log(this.experiencia);
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+      });
+    });
   }
 
-  public actualizarDatos(){
+  public actualizarDatos() {
     this.experienciaService.actualizarExperiencia(this.experiencia).subscribe(
       (data) => {
-        Swal.fire('experiencia actualizado','El experiencia ha sido actualizado con éxito','success').then(
-          (e) => {
-            this.router.navigate(['/admin/experiencia']);
-          }
-        );
+        console.log('Experiencia actualizada:', data);
+        // Realizar cualquier otra acción necesaria después de la actualización
+        this.router.navigate(['/']);
       },
       (error) => {
-        Swal.fire('Error en el sistema','No se ha podido actualizar el experiencia','error');
-        console.log(error);
+        console.log('Error al actualizar la experiencia:', error);
+        // Realizar cualquier otra acción necesaria en caso de error
       }
-    )
+    );
   }
 }

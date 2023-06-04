@@ -4,24 +4,26 @@
     background-color: #f0f0f0;
     border-radius: 5px;
   }
+
+
   
-  .habilidades-container h3 {
+h3 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
   }
   
-  .habilidad-content {
+.habilidad-content {
     margin-bottom: 10px;
   }
   
- .habilidades__label {
+.habilidades__label {
     font-size: 1rem;
     color: hsl(250, 69%, 61%);
   }
   
-  .habilidad-content input {
+.habilidad-content input {
 
     font-size: 0.938rem;
     color: hsl(250, 69%, 61%);
@@ -29,7 +31,7 @@
     padding: 0.25rem 0.5rem 0.5rem 0;
   }
   
-  .habilidad-content button {
+.habilidad-content button {
     padding: 5px 10px;
     background-color: #333;
     color: #fff;
@@ -38,9 +40,8 @@
     cursor: pointer;
   }
 
-  .boton{
-
-        padding: 5px 10px;
+.boton{
+    padding: 5px 10px;
     background-color: #3b0a34;
     color: #fff;
     border: none;

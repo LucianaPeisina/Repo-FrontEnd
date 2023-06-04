@@ -1,16 +1,22 @@
 <div id="Actualizacion">
-    <h3 id="Titulo-H">Actualizar Habilidad</h3>
-    <form id="Formulario">
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" [(ngModel)]="habilidad.nombre" name="nombre">
-      </div>
-      <div class="form-group">
-        <label for="nivel">Nivel:</label>
-        <input type="number" class="form-control" id="nivel" [(ngModel)]="habilidad.nivel" name="nivel">
-      </div>
-      <button type="button" class="btn btn-primary" (click)="actualizarHabilidad()">Actualizar</button>
-      <button type="button" class="btn btn-secondary" [routerLink]="['/portfolio']">Cancelar</button>
-    </form>
-  </div>
-  
+  <h3 id="Titulo-H">Actualizar Habilidad</h3>
+  <form id="Formulario">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="habilidad.nombre" name="nombre">
+    </div>
+    <div class="form-group">
+      <label for="nivel">Nivel:</label>
+      <input type="text" class="form-control" id="nivel" [(ngModel)]="habilidad.nivel" name="nivel">
+    </div>
+
+
+    <div class="form-group" *ngIf="habilidad.esDura">
+      <label for="num">Número:</label>
+      <input type="number" class="form-control" id="num" [(ngModel)]="habilidad.num" name="num">
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="actualizarHabilidad()">Actualizar</button>
+    <button type="button" class="btn btn-secondary" [routerLink]="['/portfolio']">Cancelar</button>
+  </form>
+</div>

@@ -1,1 +1,20 @@
-<p>actu-herramientas works!</p>
+<div id="Actualizacion">
+    <h3 id="Titulo-H">Actualizar Herramienta</h3>
+    <form id="Formulario">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="herramienta.nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo:</label>
+        <input type="text" class="form-control" id="logo" [(ngModel)]="herramienta.logo" name="logo">
+      </div>
+      <div class="form-group">
+        <label for="nivel">Nivel:</label>
+        <input type="text" class="form-control" id="nivel" [(ngModel)]="herramienta.nivel" name="nivel">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="actualizarHerramienta()">Actualizar</button>
+      <button type="button" class="btn btn-secondary" [routerLink]="['/portfolio']">Cancelar</button>
+    </form>
+  </div>
+  

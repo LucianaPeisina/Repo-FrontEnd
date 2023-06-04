@@ -20,17 +20,17 @@ export class ActuHabilidadesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.habilidadId = params['id'];
+      this.habilidadId = Number(params['id']);
       this.esDura = params['esDura'] === 'true';
 
+      
+      // Lógica para cargar los datos de la habilidad utilizando el servicio de habilidades
       if (this.esDura) {
         this.habilidadesService.buscarDura(this.habilidadId).subscribe(data => {
-          console.log(data);
           this.habilidad = data;
         });
       } else {
         this.habilidadesService.buscarBlanda(this.habilidadId).subscribe(data => {
-          console.log(data);
           this.habilidad = data;
         });
       }
@@ -59,3 +59,4 @@ export class ActuHabilidadesComponent implements OnInit {
   }
   
   }
+
