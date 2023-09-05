@@ -4,11 +4,11 @@
     <form (submit)="agregarExperiencia()">
       <div class="experiencia__content">
         <label for="clase" class="experiencia__label">Clase:</label>
-        <input type="text" id="clase" name="clase" [(ngModel)]="experiencia.clase" class="experiencia__input">
+        <input type="text" id="clase" name="clase" [(ngModel)]="experiencia.clase" class="experiencia__input" required>
       </div>
       <div class="experiencia__content">
         <label for="icono" class="experiencia__label">Icono:</label>
-        <input type="text" id="icono" name="icono" [(ngModel)]="experiencia.icono" class="experiencia__input">
+        <input type="text" id="icono" name="icono" [(ngModel)]="experiencia.icono" class="experiencia__input" required>
       </div> 
       <div class="experiencia__content">
         <label for="nombre" class="experiencia__label">Nombre:</label>
